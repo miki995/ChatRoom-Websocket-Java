@@ -33,7 +33,7 @@ public class WebSocketChatApplication {
 
 
         StringBuffer url = request.getRequestURL();
-        String wsURL = url.toString().replaceFirst("http:", "ws:") + "/";
+        String wsURL = url.toString().replaceFirst("http:", "wss:") + "/";
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/chat");
