@@ -48,5 +48,9 @@ public class Message {
     private String type;
 
     public Message(String username, int onlineCount, String msg, String type) {
+        this.username = username;
+        this.onlineCount = onlineCount;
+        this.msg = msg;
+        this.type = type;
     }
 }

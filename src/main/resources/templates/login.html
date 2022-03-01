@@ -139,7 +139,7 @@
             <input id="username" name="username" class="text" type="text" placeholder="Username">
         </div>
         <div class="mb2">
-            <a class="act-but submit" onclick="login()">Login</a>
+            <a id="loginButton" class="act-but submit" onclick="login()">Login</a>
         </div>
     </form>
 </div>
@@ -150,7 +150,7 @@
      * Login
      */
     function login() {
-        location.href = '/chat?username='+$('#username').val();
+        window.location = '/chat?username='+$('#username').val();
     }
 
     /**
@@ -158,7 +158,10 @@
      */
     document.onkeydown = function (event) {
         var e = event || window.event || arguments.callee.caller.arguments[0];
-        e.keyCode === 13 && login();
+        if (e.code === 'Enter') {
+            e.preventDefault();
+            login();
+        }
     };
 
 

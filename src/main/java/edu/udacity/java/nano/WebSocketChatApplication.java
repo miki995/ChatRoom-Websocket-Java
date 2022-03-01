@@ -28,8 +28,9 @@ public class WebSocketChatApplication {
     /**
      * Chatroom Page
      */
-    @GetMapping("/index")
+    @GetMapping("/chat")
     public ModelAndView index(String username, HttpServletRequest request) throws UnknownHostException {
+
 
         StringBuffer url = request.getRequestURL();
         String wsURL = url.toString().replaceFirst("http:", "ws:") + "/";
